@@ -10,12 +10,13 @@ sizes = {
   670: '11',
   680: '11.5',
   690: '12'
+  #etc, etc
 }
 
 def add_to_cart():
   #add to cart
   cart_url = 'http://www.adidas.com/on/demandware.store/Sites-adidas-US-Site/en_US/Cart-MiniAddProduct'
-  print('Checking out')
+  print('Adding to cart')
   payload = {
     'layer': 'Add To Bag overlay',
     'pid': 'BB3933_660',
@@ -25,3 +26,13 @@ def add_to_cart():
   }
 
   req.post(cart_url, data=payload)
+
+def checkout():
+  payload = {
+    'dwfrm_payment_creditCard_type': '001',
+    'dwfrm_payment_creditCard_ownder': 'Fake Person' 
+    'dwfrm_payment_creditCard_month': '04',
+    'dwfrm_payment_credotCard_year': '2020',
+    'dwfrm_payment_securekey': '???'
+    'dwfrm_payment_signcreditcardfields': 'sign'
+  }
